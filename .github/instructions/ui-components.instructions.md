@@ -1,3 +1,7 @@
+---
+description: Read this before implementing or modifying any UI/component-related code in this project.
+---
+
 # UI Components Guidelines
 
 All UI elements in this project use **shadcn/ui**. Never create custom component primitives — always use or extend shadcn/ui components.
