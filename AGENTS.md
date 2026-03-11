@@ -1,14 +1,6 @@
 # Agent Instructions — Link Shortener Project
 
 This file is the entry point for LLM agents and AI coding assistants working in this repository.
-All coding standards, architectural decisions, and domain-specific conventions are broken out into
-separate documents inside the `/docs` directory.
-
-> [!CAUTION]
-> **MANDATORY — NO EXCEPTIONS:** You MUST use the `read_file` tool to fully read every relevant
-> file in the `/docs` directory **before writing or modifying a single line of code.** Generating
-> code without first reading the applicable doc(s) is a critical violation of these instructions.
-> Skimming this summary is NOT sufficient — open and read the full document.
 
 ---
 
@@ -16,13 +8,8 @@ separate documents inside the `/docs` directory.
 
 | File | What it covers |
 |---|---|
-| [Authentication Guidelines](docs/authentication.md) | Clerk authentication — protected routes, redirects, modal sign-in/sign-up, and auth helpers |
-| [UI Components Guidelines](docs/ui-components.md) | shadcn/ui usage — component imports, adding new components, customization rules |
-
-**Before touching any auth-related code → read `docs/authentication.md` in full.**
-**Before touching any UI/component code → read `docs/ui-components.md` in full.**
-**When in doubt, read both.**
-
+| [Authentication Guidelines](#authentication) | Clerk authentication — protected routes, redirects, modal sign-in/sign-up, and auth helpers |
+| [UI Components Guidelines](#ui-components) | shadcn/ui usage — component imports, adding new components, customization rules |
 ---
 
 ## Quick Rules (apply everywhere)

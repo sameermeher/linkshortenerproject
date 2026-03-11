@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Link2,
-  BarChart3,
   Zap,
   Shield,
   MousePointerClick,
@@ -17,12 +16,6 @@ const features = [
     title: "Instant Short Links",
     description:
       "Paste any long URL and get a clean, shareable short link in seconds.",
-  },
-  {
-    icon: BarChart3,
-    title: "Click Analytics",
-    description:
-      "Track how many times your links are clicked with real-time stats on your dashboard.",
   },
   {
     icon: Zap,
@@ -63,7 +56,6 @@ export default function Home() {
         </h1>
         <p className="max-w-xl text-lg text-muted-foreground">
           Turn long, unwieldy URLs into clean short links you can share anywhere.
-          Track every click from your personal dashboard.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           <SignUpButton mode="modal">

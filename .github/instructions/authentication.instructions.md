@@ -1,3 +1,7 @@
+---
+description: Read this before implementing or modifying any authentication-related code in this project.
+---
+
 # Auth — Clerk Integration
 
 ## Rules
