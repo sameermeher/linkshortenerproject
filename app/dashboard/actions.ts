@@ -1,11 +1,15 @@
 "use server";
 
+import crypto from "crypto";
 import { auth } from "@clerk/nextjs/server";
 import { z } from "zod";
 import { deleteLinkById, insertLink, updateLinkById } from "@/data/links";
 
 const createLinkSchema = z.object({
-  url: z.string().url("Please enter a valid URL"),
+  url: z.string().url("Please enter a valid URL").refine(
+    (val) => val.startsWith("http://") || val.startsWith("https://"),
+    { message: "Only http and https URLs are allowed" }
+  ),
   slug: z
     .string()
     .max(50, "Slug must be 50 characters or less")
@@ -17,7 +21,7 @@ const createLinkSchema = z.object({
 type CreateLinkInput = z.infer<typeof createLinkSchema>;
 
 function generateSlug(): string {
-  return Math.random().toString(36).slice(2, 8);
+  return crypto.randomBytes(4).toString("hex");
 }
 
 export async function createLink(data: CreateLinkInput) {
@@ -43,7 +47,10 @@ export async function createLink(data: CreateLinkInput) {
 
 const updateLinkSchema = z.object({
   id: z.number().int().positive(),
-  url: z.string().url("Please enter a valid URL"),
+  url: z.string().url("Please enter a valid URL").refine(
+    (val) => val.startsWith("http://") || val.startsWith("https://"),
+    { message: "Only http and https URLs are allowed" }
+  ),
   slug: z
     .string()
     .min(1, "Slug cannot be empty")
